@@ -23,22 +23,21 @@ Running code
 To run the code for HUD problem, execute the following command on linux:
 
 ```sh
-./HUD dataset centrality $\lambda$ $\beta$ len type 
+./HUD dataset alg $\lambda$ $\beta$ len 
 ```
 
-**There are 6 parameters:**
+**There are 5 parameters:**
 * dataset: name of the KG
-* centrality: take values of {d,df1,dp,h,hf1,hp}
+* alg: the algorithm to run
 * $\lambda$: parameter for HUD problem
 * $\beta$: parameter for early termination
 * len: run program on meta-paths of length
-* type: the type of experiments to run
 
 
-For example, the following command execute the sketch propagation framework to discover top-0.01 nodes in each candidate meta-path 
+For example, the following command execute the sketch propagation framework to discover top-0.01 nodes (degree-based) in each hidden network induced by candidate meta-paths in imdb.
 
 ```sh
-./HUD imdb df1 0.01 0 0 effect_prop_global_cross
+./HUD imdb GloD 0.01 0 0
 ```
 
 
@@ -46,8 +45,8 @@ For example, the following command execute the sketch propagation framework to d
 Input Files
 -----------
 **The program HUD requires 4 input files:**
-* node.dat stores nodes in KG. Each row in the file denotes an edge in the network.
-* link.dat stores edges in KG. Row $i$ records the labels of node $v_i$.
+* node.dat stores nodes in KG.
+* link.dat stores edges in KG.
 * meta.dat stores the number of nodes in KG.
 * dataset-cod-global-rules.dat stores the meta-paths mined by AnyBURL
 
