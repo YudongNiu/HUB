@@ -3,7 +3,6 @@
 using namespace std;
 
 int main(int argc, char* argv[]){
-    /** cod */
     std::string dataset(argv[1]);
     std::string alg(argv[2]);
     std::string topr(argv[3]);

@@ -1,7 +1,3 @@
-//
-// Created by Niu Yudong on 2023/3/8.
-//
-
 #ifndef HIN
 #define HIN
 
@@ -163,39 +159,6 @@ public:
                 rNGET[this->rETLG[et]->at(n).first]->push_back(et_g);
             }
         }
-
-//        std::cout<<this->rEL.size()<<std::endl;
-//        std::cout<<"###########################"<<std::endl;
-//        for (auto &et : this->rETL){
-//            for (unsigned int i : *et) {
-//                std::cout<< i <<"   ";
-//            }
-//            std::cout<<std::endl;
-//        }
-//        std::cout<<"##########################"<<std::endl;
-//        for (auto &et : this->rETLG){
-//            for (auto &i : *et) {
-//                std::cout<< i.first<<"@"<< i.second<<"   ";
-//            }
-//            std::cout<<std::endl;
-//        }
-//
-//        std::cout<<"##########################"<<std::endl;
-//        for(unsigned int n=0;n<NGET.size();n++){
-//            std::cout<<"n:"<<n<<std::endl;
-//            for(unsigned int j=0;j<NGET[n]->size();j++){
-//                auto etg = NGET[n]->at(j);
-//                std::cout<<"type:" << etg.etype <<" "<<etg.begin<<" "<<etg.end<<std::endl;
-//            }
-//        }
-//        std::cout<<"##########################"<<std::endl;
-//        for(unsigned int n=0;n<rNGET.size();n++){
-//            std::cout<<"n:"<<n<<std::endl;
-//            for(unsigned int j=0;j<rNGET[n]->size();j++){
-//                auto etg = rNGET[n]->at(j);
-//                std::cout<<"type:" << etg.etype <<" "<<etg.begin<<" "<<etg.end<<std::endl;
-//            }
-//        }
     }
 };
 
