@@ -40,7 +40,16 @@ For example, the following command execute the sketch propagation framework to d
 ./HUD imdb GloD 0.01 0 0
 ```
 
+Note that before running other algorithms, please first run the following four commands:
 
+```sh
+./HUD dataset ExactD $\lambda$ 0 0 > global_res/dataset/df1/hg_global_greater_r$\lambda$.res
+./HUD dataset ExactD+ $\lambda$ 0 0 > global_res/dataset/df1/hg_global_r$\lambda$.res
+./HUD dataset ExactH $\lambda$ 0 0 > global_res/dataset/hf1/hg_global_greater_r$\lambda$.res
+./HUD dataset ExactH+ $\lambda$ 0 0 > global_res/dataset/hf1/hg_global_r$\lambda$.res
+```
+
+to store the result for exact methods, which is used for effectiveness evaluation.
 
 Input Files
 -----------
