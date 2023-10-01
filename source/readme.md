@@ -1,4 +1,4 @@
-# Hub Discovery from Hidden Networks in Knowledge Graphs
+# Finding Hubs without Materializing Meta-path Graphs
 
 Compile
 -------
@@ -7,53 +7,53 @@ Before compile the program, set the key parameters for our program in file "para
 **There are 5 parameters:**
 * K: the size of the KMV sketch
 * L: the number of sketch propagations
-* LOOP: take the average result of LOOP executions (for approximate HUD queries)
-* QNUM: the number of personalized queries sampled for each candidate meta-path (for personalized HUD queries)
+* LOOP: take the average result of LOOP executions (for approximate HUB queries)
+* QNUM: the number of personalized queries sampled for each candidate meta-path (for personalized HUB queries)
 * PATHCOUNT: the number of meta-paths sampled for scalability test with lengh 1, 2, 3 respectively
 
-Then, compile the code for HUD problem by executing the following command on linux:
+Then, compile the code for HUB by executing the following command on linux:
 
 ```sh
-g++ -O3 main.py -o HUD
+g++ -O3 main.py -o HUB
 ```
 
 Running code
 -------
 
-To run the code for HUD problem, execute the following command on linux:
+To run the code for HUB queries, execute the following command on linux:
 
 ```sh
-./HUD dataset alg $\lambda$ $\beta$ len 
+./HUB dataset alg $\lambda$ $\beta$ len 
 ```
 
 **There are 5 parameters:**
 * dataset: name of the KG
 * alg: the algorithm to run
-* $\lambda$: parameter for HUD problem
+* $\lambda$: parameter for HUB problem
 * $\beta$: parameter for early termination
-* len: run program on meta-paths of length
+* len: run program on meta-paths with certain length
 
 
-For example, the following command execute the sketch propagation framework to discover top-0.01 nodes (degree-based) in each hidden network induced by candidate meta-paths in imdb.
+For example, the following command execute the sketch propagation framework to find top-0.01 nodes (degree-based) in each meta-path graph induced by candidate meta-paths in imdb.
 
 ```sh
-./HUD imdb GloD 0.01 0 0
+./HUB imdb GloD 0.01 0 0
 ```
 
 Note that before running other algorithms, please first run the following four commands:
 
 ```sh
-./HUD dataset ExactD $\lambda$ 0 0 > global_res/dataset/df1/hg_global_greater_r$\lambda$.res
-./HUD dataset ExactD+ $\lambda$ 0 0 > global_res/dataset/df1/hg_global_r$\lambda$.res
-./HUD dataset ExactH $\lambda$ 0 0 > global_res/dataset/hf1/hg_global_greater_r$\lambda$.res
-./HUD dataset ExactH+ $\lambda$ 0 0 > global_res/dataset/hf1/hg_global_r$\lambda$.res
+./HUB dataset ExactD $\lambda$ 0 0 > global_res/dataset/df1/hg_global_greater_r$\lambda$.res
+./HUB dataset ExactD+ $\lambda$ 0 0 > global_res/dataset/df1/hg_global_r$\lambda$.res
+./HUB dataset ExactH $\lambda$ 0 0 > global_res/dataset/hf1/hg_global_greater_r$\lambda$.res
+./HUB dataset ExactH+ $\lambda$ 0 0 > global_res/dataset/hf1/hg_global_r$\lambda$.res
 ```
 
 to store the result for exact methods, which is used for effectiveness evaluation.
 
 Input Files
 -----------
-**The program HUD requires 4 input files:**
+**The program HUB requires 4 input files:**
 * node.dat stores nodes in KG.
 * link.dat stores edges in KG.
 * meta.dat stores the number of nodes in KG.
