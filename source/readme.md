@@ -23,7 +23,7 @@ Running code
 To run the code for HUB queries, execute the following command on linux:
 
 ```sh
-./HUB dataset alg $\lambda$ $\beta$ len 
+./HUB dataset alg $\lambda$ $\beta$
 ```
 
 **There are 5 parameters:**
@@ -31,22 +31,21 @@ To run the code for HUB queries, execute the following command on linux:
 * alg: the algorithm to run
 * $\lambda$: parameter for HUB problem
 * $\beta$: parameter for early termination
-* len: run program on meta-paths with certain length
 
 
 For example, the following command execute the sketch propagation framework to find top-0.01 nodes (degree-based) in each meta-path graph induced by candidate meta-paths in imdb.
 
 ```sh
-./HUB imdb GloD 0.01 0 0
+./HUB imdb GloD 0.01 0
 ```
 
 Note that before running other algorithms, please first run the following four commands:
 
 ```sh
-./HUB dataset ExactD $\lambda$ 0 0 > global_res/dataset/df1/hg_global_greater_r$\lambda$.res
-./HUB dataset ExactD+ $\lambda$ 0 0 > global_res/dataset/df1/hg_global_r$\lambda$.res
-./HUB dataset ExactH $\lambda$ 0 0 > global_res/dataset/hf1/hg_global_greater_r$\lambda$.res
-./HUB dataset ExactH+ $\lambda$ 0 0 > global_res/dataset/hf1/hg_global_r$\lambda$.res
+./HUB dataset ExactD $\lambda$ 0 > global_res/dataset/df1/hg_global_greater_r$\lambda$.res
+./HUB dataset ExactD+ $\lambda$ 0 > global_res/dataset/df1/hg_global_r$\lambda$.res
+./HUB dataset ExactH $\lambda$ 0 > global_res/dataset/hf1/hg_global_greater_r$\lambda$.res
+./HUB dataset ExactH+ $\lambda$ 0 > global_res/dataset/hf1/hg_global_r$\lambda$.res
 ```
 
 to store the result for exact methods, which is used for effectiveness evaluation.
@@ -58,8 +57,3 @@ Input Files
 * link.dat stores edges in KG.
 * meta.dat stores the number of nodes in KG.
 * dataset-cod-global-rules.dat stores the meta-paths mined by AnyBURL
-
-**Additional input files:**
-* dataset-cod-global-rules.dat1 stores meta-paths of length 1
-* dataset-cod-global-rules.dat2 stores meta-paths of length 2
-* dataset-cod-global-rules.dat3 stores meta-paths of length 3
