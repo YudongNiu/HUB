@@ -7,7 +7,6 @@ int main(int argc, char* argv[]){
     std::string alg(argv[2]);
     std::string topr(argv[3]);
     std::string beta(argv[4]);
-    std::string len(argv[5]);
 
     if(alg == "ExactD+")  // finished
         Effective_hg_global_f1(dataset, std::stod(topr), "df1");
