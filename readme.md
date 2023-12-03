@@ -1,4 +1,4 @@
-# Finding Hubs without Materializing Meta-path Graphs
+# Efficient Hub Discovery in Relational Graphs
 
 Compile
 -------
