@@ -1,4 +1,4 @@
-# Efficient Hub Discovery in Relational Graphs
+# A Sketch Propagation Framework for Hub Queries on Non-Materialized Relational Graphs
 
 Compile
 -------
