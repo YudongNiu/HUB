@@ -1,4 +1,4 @@
-# A Sketch Propagation Framework for Hub Queries on Non-Materialized Relational Graphs
+# A Sketch Propagation Framework for Hub Queries on Unmaterialized Relational Graphs
 
 Compile
 -------
